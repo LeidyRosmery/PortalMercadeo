@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="com.subciber.PortalMercadeo.controller.home.Home"
+	xmlns="sap.m"
+	xmlns:ux="sap.uxap"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:forms="sap.ui.layout.form"
+	displayBlock="true"
+	xmlns:l="sap.ui.layout"
+	class="viewPadding">
+	<Page id="page" class="view-home">
+		<customHeader>
+			<core:Fragment fragmentName="com.subciber.PortalMercadeo.view.home.Header" type="XML"/>
+		</customHeader>
+		<content>
+			<mvc:XMLView viewName="com.subciber.PortalMercadeo.view.home.Aplicaciones"/>
+		</content>
+	</Page>
+</mvc:View>
+
+<!-- <App backgroundColor="Transparent"> <pages backgroundDesign="Transparent"> <Page title="{i18n>title}" backgroundDesign="Transparent"> <content> </content> </Page> </pages> </App> -->

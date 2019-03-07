@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:rte="sap.ui.richtexteditor"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table"
+	xmlns:u="sap.ui.unified"
+	xmlns:tnt="sap.tnt"
+	xmlns:table="sap.ui.table"
+	xmlns:w="sap.m.Table">
+	<Table
+		id="tbUsuarios"
+		alternateRowColors="false"
+		growing="true"
+		growingTriggerText="Mostrar más"
+		growingThreshold="12"
+		inset="true"
+		items="{ path: 'Usuario>/', sorter: { path: 'apellidos', descending: true } }"
+		noDataText="No hay Información"
+		mode="MultiSelect"
+		selectionChange="deleteItems">
+		<columns >
+			<Column width="" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+				<Text text="APELLIDOS Y NOMBRES"/>
+			</Column>
+			<Column width="" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+				<Text text="CORREO"/>
+			</Column>
+			<Column width="" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+				<Text text="TELEFONO"/>
+			</Column>
+			<!-- <Column width="12em" minScreenWidth="Tablet" demandPopin="true" hAlign="Center"> <Text text="OPCIONES"/> </Column> -->
+			<Column width="12em" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+				<Text text="OPCIONES"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{Usuario>apellidos} , {Usuario>nombres} "/>
+					<Text text="{Usuario>usuario}"/>
+					<Text text="{Usuario>email}"/>
+					<!-- <HBox> <core:Icon press=" onDelete" class="icons-table" size="1.1rem" src="sap-icon://delete"></core:Icon> <core:Icon class="icons-table" press="onEdit" size="1.1rem" src="sap-icon://user-edit"></core:Icon> </HBox> -->
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<items>
+							<core:Icon press=" onDelete" tooltip="Eliminar Usuario" class="icons-table" size="1.1rem" src="sap-icon://delete"></core:Icon>
+							<core:Icon class="icons-table" tooltip="Editar Usuario" press="onNavegarEdit" size="1.1rem" src="sap-icon://user-edit"></core:Icon>
+						</items>
+					</FlexBox>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

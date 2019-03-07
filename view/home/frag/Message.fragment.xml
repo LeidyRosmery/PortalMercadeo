@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" class="sapUiBodyBackground sapContrastPlus" xmlns:mvc="sap.ui.core.mvc">
+  <ResponsivePopover title="Alertas" width="300px" showHeader="true" class="popup_message sapUiPopupWithPadding" placement="Bottom">
+    <content>
+      <l:VerticalLayout class="sapUiContentPadding" width="100%">
+        <l:content>
+          <List items="{usuarioAlertas>/}">
+            <items>
+              <NotificationListItem
+                title="{usuarioAlertas>titulo}"
+                description="{usuarioAlertas>descripcion}"
+                showCloseButton="true"
+                unread="true"
+                datetime="{usuarioAlertas>tiempoEnviado}"
+                priority="{usuarioAlertas>prioridad}"
+                close="onItemClose" >
+              </NotificationListItem>
+            </items>
+          </List>
+        </l:content>
+      </l:VerticalLayout>
+    </content>
+  </ResponsivePopover>
+</core:FragmentDefinition>

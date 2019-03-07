@@ -1,0 +1,132 @@
+{
+  "_version": "1.8.0",
+  "sap.app": {
+    "id": "com.subciber.PortalMercadeo",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "sourceTemplate": {
+      "id": "ui5template.basicSAPUI5ApplicationProject",
+      "version": "1.40.12"
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.subciber.PortalMercadeo.view.Root",
+      "type": "XML",
+      "async": true,
+      "id": "Root"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.1",
+      "libs": {
+        "sap.ui.layout": {},
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.subciber.PortalMercadeo.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [{
+        "uri": "css/style.css"
+      }]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.subciber.PortalMercadeo.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "async": true
+      },
+      "routes": [{
+          "pattern": "",
+          "name": "appInicio",
+          "target": "home"
+        },
+        {
+          "pattern": "usuario",
+          "name": "appUsuario",
+          "target": "targetUsuario"
+        },
+        {
+          "pattern": "editUsuario",
+          "name": "appUsuarioEdit",
+          "target": "editUsuario"
+        },
+        {
+          "pattern": "addUsuario",
+          "name": "appUsuarioAdd",
+          "target": "addUsuario"
+        }
+      ],
+      "targets": {
+        "home": {
+          "transition": "slide",
+          "viewName": "home.Home",
+          "viewLevel": 1
+        },
+        "targetUsuario": {
+          "transition": "slide",
+          "viewName": "usuario.Usuario",
+          "viewLevel": 2
+        },
+        "notFound": {
+          "viewId": "notFound",
+          "viewName": "NotFound",
+          "transition": "slide",
+          "viewLevel": 3
+        },
+        "addUsuario": {
+          "transition": "slide",
+          "viewName": "usuario.addUsuario",
+          "viewLevel": 4
+        },
+        "editUsuario": {
+          "transition": "slide",
+          "viewName": "usuario.editUsuario",
+          "viewLevel": 5
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<ResponsivePopover title="Profile" width="300px" showHeader="true" class="popup_profile sapUiPopupWithPadding" placement="Bottom">
+		<content>
+			<FlexBox class="wrapper-img" alignItems="Start" justifyContent="Center">
+				<items>
+					<Image src="{usuarioLogeadoModel>/imagenUrl}" class="img-login" width="6em" densityAware="false"/>
+				</items>
+			</FlexBox>
+			<VBox class="box-form">
+				<f:SimpleForm
+					class="" 
+					editable="false"
+					layout="ResponsiveGridLayout"
+					title="{usuarioLogeadoModel>/usuario}"
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false">
+					<f:content>
+						<Label text="Nombre "/>
+						<Text  text="{usuarioLogeadoModel>/nombre}"/>
+						<Label text="Apellido "/>
+						<Text text="{usuarioLogeadoModel>/apellido}"/>
+						<Button icon="sap-icon://action-settings" text="Configurar perfil" class="btn-login mg-btn" press="onEditProfile"/>
+						<Button icon="sap-icon://action" text="Cerrar Sesión" class="btn-login" press="onExit"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

@@ -1,0 +1,5 @@
+<mvc:View controllerName="com.subciber.PortalMercadeo.controller.Root" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell" appWidthLimited="true"  backgroundOpacity="0.9" backgroundImage="img/bg-home.jpg">
+		<App id="app" backgroundColor="Transparent"></App>
+	</Shell>
+</mvc:View>

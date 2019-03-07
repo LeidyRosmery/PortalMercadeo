@@ -1,0 +1,54 @@
+<mvc:View
+	controllerName="com.subciber.PortalMercadeo.controller.usuario.Usuario"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:com="sap.suite.ui.commons"
+	xmlns:u="sap.ui.unified"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:f="sap.f"
+	xmlns:lf="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout"
+	xmlns:c="sap.ui.core"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	class="viewPadding">
+	<Page id="usrPageUsuario" class="usrPageUsuario  view-usuario" title="Tabla de Usuarios" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<f:DynamicPage headerBackgroundDesign="Translucent" class="homeDynamic" id="citaProvicional" preserveHeaderStateOnScroll="true" showFooter="true">
+				<f:title>
+					<f:DynamicPageTitle>
+						<!-- <f:heading>
+							<Title text="{i18n>lblEstadosUsuario}"/>
+						</f:heading> -->
+						<f:actions>
+							<Button class="btn-app" press="onNavegarAdd" icon="sap-icon://add"/>
+							<Button class="btn-app" press="onRefresh" icon="sap-icon://refresh"/>
+							<Button class="btn-app" press="onDelete" icon="sap-icon://delete"/>
+						</f:actions>
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header>
+					<f:DynamicPageHeader pinnable="true">
+						<f:content>
+							<layout:HorizontalLayout allowWrapping="true">
+								<layout:VerticalLayout >
+									<SearchField class="searchFiltro" width="100%" search="onSearchUsuario" id="searchFiltro" value=""></SearchField>
+								</layout:VerticalLayout>
+							</layout:HorizontalLayout>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+					<core:Fragment fragmentName="com.subciber.PortalMercadeo.view.usuario.frag.tablaUsuarios" type="XML"></core:Fragment>
+				</f:content>
+			</f:DynamicPage>
+
+		</content>
+
+	</Page>
+
+</mvc:View>
