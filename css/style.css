@@ -868,6 +868,14 @@ input:-internal-autofill-selected {
 .view-usuario .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
   background-color: rgba(255, 255, 255, 1);
 }
+@media (min-width: 992px) {
+  .view-usuario .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+    height: 100vh !important;
+  }
+  .view-usuario .sapMPageEnableScrolling{
+    overflow: hidden !important;
+  }
+}
 
 .view-usuario .sapMIBar.sapMHeader-CTX {
   /* background-color: #2f3c48 !important; */
@@ -936,7 +944,7 @@ html.sap-desktop .sapMShellCentralBox {
 
 @media (min-width: 992px) {
   .view-usuario .sapUiForm .sapUiFormResGridMain {
-    padding: 1rem 6rem !important;
+    padding: 3rem 6rem !important;
   }
 }
 
@@ -977,8 +985,56 @@ html.sap-desktop .sapMShellCentralBox {
 .icons-table{
   margin:.5em 1em;
 }
-.sapMListTblCell {
+.view-usuario .sapMListTblCell {
 
     vertical-align: middle !important;
 
+}
+  .sapMNav {
+     /* background: rgba(63, 81, 97, 0.6) !important; */
+}
+.view-usuario .sapMIBar.sapMHeader-CTX {
+    background-color: transparent !important;
+}
+.view-usuario .sapFDynamicPageTitle{
+  /* background: transparent !important; */
+      background: rgba(63, 81, 97, 0.6) !important;
+}
+.view-usuario .sapFDynamicPageHeader{
+    /*background: transparent !important;*/
+        background: rgba(63, 81, 97, 0.6) !important;
+}
+
+.view-usuario .sapMPageEnableScrolling {
+    /* background: transparent!important; */
+      background: rgba(63, 81, 97, 0.6) !important;
+}
+.view-usuario .sapMListTblHeader>.sapMTableTH {
+    background: rgba(63, 81, 97, 1);
+}
+
+.sapMListTbl th .sapMText {
+  color: #fff !important;
+}
+
+
+.table-usuarios .sapMFlexBoxJustifyCenter{
+  justify-content:start !important;
+}
+.table-usuarios .sapMListTblSubCntRow>.sapMListTblSubCntHdr .sapMText{
+        color: #0070b1 !important;
+}
+.view-usuario .sapMListInsetBG {
+    padding: 0 !important;
+}
+.view-usuario .sapUiFormResGrid>div {
+  padding: 2rem 1.2rem;
+}
+@media (min-width: 992px) {
+  .table-usuarios .sapMFlexBoxJustifyCenter{
+    justify-content:center !important;
+  }
+  .table-usuarios .sapUiIcon::before {
+      color: #0070b1 !important;
+  }
 }
