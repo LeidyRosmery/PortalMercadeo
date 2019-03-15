@@ -1,12 +1,14 @@
 sap.ui.define([
 	"com/subciber/PortalMercadeo/util/base/UtilResponse",
 	"com/subciber/PortalMercadeo/util/base/UtilHttp",
-	"com/subciber/PortalMercadeo/constante/home/Constantes"
+	"com/subciber/PortalMercadeo/constante/generica/Constantes"
 ], function(UtilResponse, UtilHttp, Constantes) {
 	"use strict";
 	return {
-		alertas: function(oParam, callback,context) {
-			UtilHttp.httpPost(Constantes.services.alertas, oParam, Constantes.IdApp, function(result) {
+		consultarCampoGenerica: function(oParam, callback,context) {
+			var url = Constantes.services.consultarCampoGenerica.replace("{0}",oParam.codigoTabla);
+
+			UtilHttp.httpGet(url, Constantes.IdApp, function(result) {
 				var oAuditResponse = result.auditResponse;
 				if (oAuditResponse.codigoRespuesta === 1) {
 					callback(UtilResponse.success(oAuditResponse.mensajeRespuesta, result.objectResponse));

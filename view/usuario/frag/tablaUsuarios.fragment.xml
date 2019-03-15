@@ -13,7 +13,6 @@
 		id="tbUsuarios"
 		alternateRowColors="false"
 		growing="true"
-		class="table-usuarios"
 		growingTriggerText="Mostrar más"
 		growingThreshold="12"
 		inset="true"

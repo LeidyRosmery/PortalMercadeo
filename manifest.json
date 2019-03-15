@@ -73,11 +73,12 @@
         "controlAggregation": "pages",
         "controlId": "app",
         "bypassed": {
-          "target": "notFound"
-        },
+              "target": "notFound"
+           },
         "async": true
       },
-      "routes": [{
+      "routes": [
+        {
           "pattern": "",
           "name": "appInicio",
           "target": "home"
@@ -88,14 +89,19 @@
           "target": "targetUsuario"
         },
         {
-          "pattern": "editUsuario",
+          "pattern": "usuario/editUsuario",
           "name": "appUsuarioEdit",
           "target": "editUsuario"
         },
         {
-          "pattern": "addUsuario",
+          "pattern": "usuario/addUsuario",
           "name": "appUsuarioAdd",
           "target": "addUsuario"
+        },
+        {
+          "pattern": "maestro",
+          "name": "appMaestro",
+          "target": "targetMaestro"
         }
       ],
       "targets": {
@@ -110,20 +116,25 @@
           "viewLevel": 2
         },
         "notFound": {
-          "viewId": "notFound",
-          "viewName": "NotFound",
-          "transition": "slide",
-          "viewLevel": 3
+           "viewId": "notFound",
+           "viewName": "NotFound",
+           "transition": "slide",
+           "viewLevel": 3
         },
         "addUsuario": {
           "transition": "slide",
-          "viewName": "usuario.addUsuario",
+          "viewName": "usuario.AddUsuario",
           "viewLevel": 4
         },
         "editUsuario": {
           "transition": "slide",
-          "viewName": "usuario.editUsuario",
+          "viewName": "usuario.EditUsuario",
           "viewLevel": 5
+        },
+        "targetMaestro": {
+          "transition": "slide",
+          "viewName": "generica.Generica",
+          "viewLevel": 6
         }
 
       }

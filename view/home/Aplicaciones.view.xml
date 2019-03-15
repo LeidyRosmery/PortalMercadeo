@@ -17,7 +17,7 @@
 						<ux:blocks>
 							<l:VerticalLayout>
 							 <l:HorizontalLayout id="SlideTileContainer" allowWrapping="true">
-									<FlexBox alignItems="Start" justifyContent="Start" items="{usuarioLogeadoModel>aplicaciones/}">
+									<FlexBox alignItems="Start" justifyContent="Start" items="{path:'usuarioLogeadoModel>aplicaciones/', templateShareable:false}">
 										<items>
 											<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
 												header="Demo"

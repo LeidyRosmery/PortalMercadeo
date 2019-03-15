@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-  <Bar class="wrapper-bar">
+  <Bar class="wrapper-bar heaHeader">
     <contentLeft>
-      <ToggleButton icon="sap-icon://person-placeholder"  press="onPressProfile"/>
+      <Button icon="sap-icon://person-placeholder"  press="onPressProfile"/>
       <Image class="logo-home" src="img/logo.png"></Image>
     </contentLeft>
     <contentMiddle>
-      <Title id="headerTitulo" class="headerTitulo" text="Pagina de Inicio"></Title>
+      <Title id="headerTitulo" class="headerTitulo" text="{utilModel>/tituloApp}"></Title>
     </contentMiddle>
     <contentRight>
-      <ToggleButton icon="sap-icon://message-popup" text="3" press="onPressMessages"/>
+      <Button icon="sap-icon://message-popup" text="{usuarioAlertas>/numAlertas}" press="onPressMessages"/>
     </contentRight>
   </Bar>
 </core:FragmentDefinition>

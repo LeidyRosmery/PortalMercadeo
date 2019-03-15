@@ -18,6 +18,7 @@ sap.ui.define([
         var oModel = this.getView().getModel("usuarioLogeadoModel");
         var oContext = oModel.getProperty(sPath);
         window.location.href = Constantes.urlAplicacion + oContext.url;
+        window.location.reload();
       }catch(e){
         console.error("Error: "+e);
       }

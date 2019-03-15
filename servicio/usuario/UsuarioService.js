@@ -1,7 +1,7 @@
 sap.ui.define([
   "com/subciber/PortalMercadeo/util/base/UtilResponse",
   "com/subciber/PortalMercadeo/util/base/UtilHttp",
-  "com/subciber/PortalMercadeo/constante/usuarios/Constantes"
+  "com/subciber/PortalMercadeo/constante/usuario/Constantes"
 ], function(UtilResponse, UtilHttp, Constantes) {
   "use strict";
   return {

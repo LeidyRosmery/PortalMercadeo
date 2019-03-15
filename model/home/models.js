@@ -23,7 +23,13 @@ sap.ui.define([
       return oModel;
     },
     usuarioAlertas:function(){
-      var oModel = new JSONModel([]);
+      var oModel = new JSONModel({});
+      return oModel;
+    },
+    utilModel:function(){
+      var oParam = {};
+      oParam.tituloApp = "";
+      var oModel = new JSONModel(oParam);
       return oModel;
     }
   };

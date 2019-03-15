@@ -4,7 +4,7 @@ sap.ui.define([
 	"com/subciber/PortalMercadeo/model/home/models",
 	"com/subciber/PortalMercadeo/model/usuario/models",
   "com/subciber/PortalMercadeo/constante/home/Constantes"
-], function (UIComponent, Device, models,modelUsuario, Constantes) {
+], function (UIComponent, Device, models, modelUsuario, Constantes) {
 	"use strict";
 
 	return UIComponent.extend("com.subciber.PortalMercadeo.Component", {
@@ -19,12 +19,10 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
-
+			sap.ui.core.BusyIndicator.show(0)
 			if(localStorage.login === undefined){
 				window.location.href = Constantes.urlLogin;
-			}
-
-			console.log("Component");
+			} 
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 			// enable routing
@@ -33,6 +31,7 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 			this.setModel(models.usuarioLogeadoModel(), "usuarioLogeadoModel");
 			this.setModel(models.usuarioAlertas(), "usuarioAlertas");
+			this.setModel(models.utilModel(), "utilModel");
 			this.setModel(modelUsuario.usuarioAdd(), "usuarioAdd");
 		}
 	});

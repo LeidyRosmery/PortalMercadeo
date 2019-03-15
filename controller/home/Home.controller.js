@@ -16,25 +16,10 @@ sap.ui.define([
     },
 
     onAfterRendering: function() {
-
+ 
     },
     onRouteMatched: function(event) {
-    },
-    onExit: function() {
-      try{
-        localStorage.clear();
-        if (this._oPopoverProfile) {
-          this._oPopoverProfile.destroy();
-        }
-        if (this._oPopoverMessage) {
-          this._oPopoverMessage.destroy();
-        }
-        window.location.href = Constantes.urlLogin;
-      }catch(e){
-        console.error("Error: "+e);
-      }
-
-    } 
+    }
 
   });
 });

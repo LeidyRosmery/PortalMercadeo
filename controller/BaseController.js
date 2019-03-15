@@ -1,28 +1,31 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/core/routing/History",
-  "sap/ui/core/UIComponent"
-
-], function(Controller, History, UIComponent) {
+  "sap/ui/core/UIComponent",
+  "com/subciber/PortalMercadeo/servicio/header/AlertasService",
+  "com/subciber/PortalMercadeo/servicio/header/CerrarSesion",
+	"com/subciber/PortalMercadeo/constante/home/Constantes"
+], function(Controller, History, UIComponent, AlertasService, CerrarSesion, Constantes) {
   "use strict";
 
   return Controller.extend("com.subciber.PortalMercadeo.controller.BaseController", {
 
     onAfterRendering: function() {
-      var alertas = [];
-      alertas.push({
-        "titulo": "Prueba",
-        "descripcion": "prueba descripcion",
-        "prioridad": "None",
-        "tiempoEnviado": "5 min"
-      });
-      alertas.push({
-        "titulo": "Prueba",
-        "descripcion": "prueba descripcion",
-        "prioridad": "Low",
-        "tiempoEnviado": "2 dias"
-      });
-      this.getView().getModel("usuarioAlertas").setProperty("/", alertas);
+
+      try{
+        var that        = this;
+        var oParam = {};
+        AlertasService.alertas(oParam, function(result) {
+          if (result.iCode === 1) {
+            that.getView().getModel("usuarioAlertas").setProperty("/",result.oResults);
+          } else {
+            that.getView().getModel("usuarioAlertas").setProperty("/",{});
+          }
+        }, that);
+      }catch(e){
+          console.log(e);
+      }
+
     },
     getRouter: function() {
       try {
@@ -40,7 +43,7 @@ sap.ui.define([
         if (sPreviousHash !== undefined) {
           window.history.go(-1);
         } else {
-          this.getRouter().navTo("appHome", {}, true /*no history*/ );
+          this.getRouter().navTo("appInicio", {}, true /*no history*/ );
         }
       } catch (e) {
         console.error("Error: " + e);
@@ -48,30 +51,30 @@ sap.ui.define([
     },
     onPressProfile: function(oEvent) {
       try {
-        if (oEvent.getSource().getPressed()) {
+        //if (oEvent.getSource().getPressed()) {
           if (!this._oPopoverProfile) {
             this._oPopoverProfile = sap.ui.xmlfragment("com.subciber.PortalMercadeo.view.home.frag.Profile", this);
             this.getView().addDependent(this._oPopoverProfile);
           }
           this._oPopoverProfile.openBy(oEvent.getSource());
-        } else {
-          this.onCloseProfile();
-        }
+        //} else {
+        //  this.onCloseProfile();
+        //}
       } catch (e) {
         console.error("Error: " + e);
       }
     },
     onPressMessages: function(oEvent) {
       try {
-        if (oEvent.getSource().getPressed()) {
+        //if (oEvent.getSource().getPressed()) {
           if (!this._oPopoverMessage) {
             this._oPopoverMessage = sap.ui.xmlfragment("com.subciber.PortalMercadeo.view.home.frag.Message", this);
             this.getView().addDependent(this._oPopoverMessage);
           }
           this._oPopoverMessage.openBy(oEvent.getSource());
-        } else {
-          this.onCloseMessage();
-        }
+        //} else {
+        //  this.onCloseMessage();
+        //}
       } catch (e) {
         console.error("Error: " + e);
       }
@@ -101,6 +104,34 @@ sap.ui.define([
       } catch (e) {
         console.error("Error: " + e);
       }
+    },
+    onExit: function() {
+      try{
+
+          var that            = this;
+          var oParam          = {};
+          var datosLogueado   = JSON.parse(localStorage.login);
+  				oParam.tokens       = datosLogueado.usuario.tokenUsuario;
+          CerrarSesion.cerrarSesion(oParam, function(result) {
+            if (result.iCode === 1) {
+               console.log("Usuario Eliminado");
+            } else {
+              console.log(result);
+            }
+            localStorage.clear();
+             if (that._oPopoverProfile) {
+               that._oPopoverProfile.destroy();
+             }
+             if (that._oPopoverMessage) {
+               that._oPopoverMessage.destroy();
+             }
+            window.location.href = Constantes.urlLogin;
+          }, that);
+
+      }catch(e){
+        console.error("Error: "+e);
+      }
+
     }
 
   });

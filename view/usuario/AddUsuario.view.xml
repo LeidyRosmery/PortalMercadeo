@@ -1,5 +1,4 @@
 <mvc:View
-	controllerName="com.subciber.PortalMercadeo.controller.usuario.AddUsuario"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:u="sap.ui.unified"
@@ -11,9 +10,16 @@
 	xmlns:smartForm="sap.ui.comp.smartform"
 	xmlns:smartField="sap.ui.comp.smartfield"
 	class="viewPadding">
-	<Page id="usrPageUsuario" class="usrPageUsuario  view-usuario" title="Registrar Usuario" showNavButton="true" navButtonPress="onNavBack">
+	<Page id="usrPageUsuario" class="usrPageUsuario  view-usuario">
+		<customHeader>
+			<core:Fragment fragmentName="com.subciber.PortalMercadeo.view.home.Header" type="XML"/>
+		</customHeader>
 		<content>
-			<MessageStrip text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nibh eu consectetur commodo, augue nisi porttitor ligula, id sodales dolor purus id risus. " showIcon="true" showCloseButton="true" class="sapUiResponsiveMargin"></MessageStrip>
+			<MessageStrip
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nibh eu consectetur commodo, augue nisi porttitor ligula, id sodales dolor purus id risus. "
+				showIcon="true"
+				showCloseButton="true"
+				class="sapUiResponsiveMargin"></MessageStrip>
 			<f:Form id="FormPaso1">
 				<f:layout>
 					<f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
@@ -33,7 +39,6 @@
 											id="fileUploader"
 											width="100%"
 											value="{usuarioAdd>/img}"
-
 											tooltip="Subir una imagen referencial"
 											typeMissmatch="onValidTypeMissmatch"
 											fileSizeExceed="onFileSizeExceed"
@@ -74,7 +79,7 @@
 								</f:fields>
 							</f:FormElement>
 
-							 <f:FormElement label="Dirección" class="label-form">
+							<f:FormElement label="Dirección" class="label-form">
 								<f:fields>
 									<Input valueStateText="Ingrese solo letras" valueState="{/inputNumbers}" class="inputUser" id="direccionUser" placeholder="Ingrese dirección" value="{usuarioAdd>/roles}" liveChange="fnOnlyNumbers" fieldGroupIds="validarGrupoteInput"/>
 								</f:fields>
@@ -91,13 +96,7 @@
 				</f:formContainers>
 			</f:Form>
 		</content>
-		<footer>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<Button press="onSave" text="Guardar" icon="sap-icon://save"/>
-				<Button press="onCancel" text="Cancelar" icon="sap-icon://decline"/>
-			</Toolbar>
-		</footer>
+
 	</Page>
 
 </mvc:View>

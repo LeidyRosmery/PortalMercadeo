@@ -9,7 +9,7 @@
 	displayBlock="true"
 	xmlns:l="sap.ui.layout"
 	class="viewPadding">
-	<Page id="page" class="view-home">
+	<Page id="page">
 		<customHeader>
 			<core:Fragment fragmentName="com.subciber.PortalMercadeo.view.home.Header" type="XML"/>
 		</customHeader>

@@ -1,11 +1,12 @@
 sap.ui.define([], function() {
 	"use strict";
 	return {
-		IdApp: 'Login',
+		IdApp: 'Home',
 		urlAplicacion:'http://localhost:8888',
 		urlLogin:'http://localhost:8888/Login/',
 		services: {
-			login: "http://localhost:8088/subciber-seguridad-rest/rest/autenticacion"
+			alertas: "http://vivfcons.subciber.com:8080/subciber-configuracion-rest/rest/alertas",
+			cerrarSesion: "http://vivfcons.subciber.com:8080/subciber-seguridad-rest/rest/tokens/cerrarsesion"
 		}
 	};
 });

@@ -5,9 +5,9 @@ sap.ui.define([
 ], function(UtilResponse, UtilHttp, Constantes) {
 	"use strict";
 	return {
-		alertas: function(oParam, callback,context) {
-			UtilHttp.httpPost(Constantes.services.alertas, oParam, Constantes.IdApp, function(result) {
-				var oAuditResponse = result.auditResponse;
+		cerrarSesion: function(oParam, callback,context) {
+			UtilHttp.httpPost(Constantes.services.cerrarSesion, oParam, Constantes.IdApp, function(result) {
+				var oAuditResponse = result;
 				if (oAuditResponse.codigoRespuesta === 1) {
 					callback(UtilResponse.success(oAuditResponse.mensajeRespuesta, result.objectResponse));
 				} else if (oAuditResponse.codigoRespuesta > 1) {

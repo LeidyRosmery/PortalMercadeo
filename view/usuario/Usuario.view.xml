@@ -16,14 +16,14 @@
 	xmlns:c="sap.ui.core"
 	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	class="viewPadding">
-	<Page id="usrPageUsuario" class="usrPageUsuario  view-usuario" title="Tabla de Usuarios" showNavButton="true" navButtonPress="onNavBack">
+	<Page id="usrPageUsuario" class="usrPageUsuario view-usuario " title="Tabla de Usuarios" showNavButton="true" navButtonPress="onNavBack">
+		<customHeader>
+				 <core:Fragment  fragmentName="com.subciber.PortalMercadeo.view.home.Header" type="XML" />
+		</customHeader>
 		<content>
-			<f:DynamicPage headerBackgroundDesign="Translucent" class="homeDynamic" id="citaProvicional" preserveHeaderStateOnScroll="true" showFooter="true">
+			<f:DynamicPage   class="homeDynamic" id="citaProvicional" preserveHeaderStateOnScroll="true" >
 				<f:title>
 					<f:DynamicPageTitle>
-						<!-- <f:heading>
-							<Title text="{i18n>lblEstadosUsuario}"/>
-						</f:heading> -->
 						<f:actions>
 							<Button class="btn-app" press="onNavegarAdd" icon="sap-icon://add"/>
 							<Button class="btn-app" press="onRefresh" icon="sap-icon://refresh"/>
@@ -46,9 +46,7 @@
 					<core:Fragment fragmentName="com.subciber.PortalMercadeo.view.usuario.frag.tablaUsuarios" type="XML"></core:Fragment>
 				</f:content>
 			</f:DynamicPage>
-
 		</content>
-
 	</Page>
 
 </mvc:View>
